@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: DistributedLock
+  redis:
+    redisson:
+      file: classpath:redisson.yaml
+logging:
+  level:
+    org.redisson: INFO
