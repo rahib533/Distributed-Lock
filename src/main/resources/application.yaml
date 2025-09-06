@@ -16,4 +16,4 @@ springdoc:
     operationsSorter: method
     tagsSorter: alpha
 server:
-  port: 8989
+  port: 8080
