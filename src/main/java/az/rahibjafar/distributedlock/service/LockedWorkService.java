@@ -15,11 +15,14 @@ public class LockedWorkService {
     private final RedissonClient redisson;
 
     public String doCriticalWork() throws InterruptedException {
+        System.out.println(1);
         String lockName = "locks:price-recalc";
         RLock lock = redisson.getLock(lockName);
+        System.out.println(2);
 
         // tryLock(waitTime, leaseTime): waitTime - nə qədər gözləsin, leaseTime - avtomatik açılma müddəti
         boolean acquired = lock.tryLock(5, 30, TimeUnit.SECONDS);
+        System.out.println(3);
         if (!acquired) {
             log.warn("Lock əldə edilə bilmədi");
             return "Busy: lock is held";

@@ -7,4 +7,13 @@ spring:
 logging:
   level:
     org.redisson: INFO
-
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui
+    operationsSorter: method
+    tagsSorter: alpha
+server:
+  port: 8989
